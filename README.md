@@ -1,39 +1,54 @@
 ```java
 interface shape{
-  // final double length=4;
   abstract void getArea();
 }
 
 class Rectangle implements shape{
   double length;
   double width;
-  public Rectangle(double l,double w){
+  String shapename1;
+  String Rectangle_area;
+  public Rectangle(double l,double w,String SN1){
     length=l;
     width=w;
+    shapename1=SN1;
   }
   public void getArea(){
-    System.out.println("Rectangle_area="+(length*width));
+    Rectangle_area=("Rectangle_area="+(length*width));
   }
+  public String toString(){
+  return Rectangle_area+""+shapename1;  
+ }  
 }
 
 class Triangle implements shape{
   double base;
   double height;
-  public Triangle(double b,double h){
+  String shapename;
+  String Triangle_area;
+  public Triangle(double b,double h, String SN){
     base=b;
     height=h;
+    shapename=SN;
   }
   public void getArea(){
-    System.out.println("Triangle_area="+(base*height/2));
+  
+  Triangle_area=("Triangle_area="+(base*height/2));
   }
+  public String toString(){
+  return Triangle_area+""+shapename;  
+ }  
 }
+
 
 class Main {
   public static void main(String[] args) {
-   Rectangle rect=new Rectangle(5, 10);
+   Rectangle rect=new Rectangle(5, 10,"  RectangleArea");
    rect.getArea();
-   Triangle tri=new Triangle(5, 10);
+   System.out.println(rect);
+   Triangle tri=new Triangle(5, 10,"  TriangleArea");
    tri.getArea();
+   System.out.println(tri);
   }
 }
 ```
